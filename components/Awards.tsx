@@ -3,11 +3,11 @@ import { awards } from "@/data/awards";
 export function Awards() {
   const sorted = [...awards].sort((a, b) => b.year - a.year);
   return (
-    <section className="section reveal">
+    <section className="section reveal" id="honors">
       <div className="container">
-        <p className="section-eyebrow">Awards &amp; Honors</p>
+        <p className="section-eyebrow">Honors</p>
         <h2 className="section-heading">
-          Trophies, titles, and an <em>honorary</em> doctorate or two.
+          Seals of esteem from every <em>arena.</em>
         </h2>
         <ul className="awards-list">
           {sorted.map((a, i) => (

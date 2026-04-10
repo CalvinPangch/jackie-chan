@@ -18,11 +18,11 @@ export function Filmography() {
   const directedCount = films.filter((f) => f.role?.toLowerCase().includes("director")).length;
 
   return (
-    <section className="section reveal">
+    <section className="section reveal" id="legacy">
       <div className="container">
-        <p className="section-eyebrow">Filmography</p>
+        <p className="section-eyebrow">Legacy</p>
         <h2 className="section-heading">
-          {films.length}+ films. <em>Six decades.</em> Still rolling.
+          {films.length}+ films. <em>Six decades.</em> Still in motion.
         </h2>
 
         <div className="film-stats">

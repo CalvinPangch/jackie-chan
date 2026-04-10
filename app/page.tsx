@@ -16,7 +16,7 @@ export default function Home() {
       <Contact />
       <footer className="footer">
         <div className="container footer-inner">
-          <span>Résumé demo — not an official page.</span>
+          <span>Tribute demo only. Not an official site.</span>
           <span>
             Photo:{" "}
             <a
@@ -27,7 +27,7 @@ export default function Home() {
             </a>
             , CC BY-SA 3.0
           </span>
-          <span>Built with Next.js</span>
+          <span>Built in Next.js 16</span>
         </div>
       </footer>
     </main>

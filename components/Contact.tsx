@@ -1,11 +1,12 @@
 export function Contact() {
   return (
-    <section className="section reveal">
+    <section className="section reveal" id="contact">
       <div className="container">
         <p className="section-eyebrow">Contact</p>
         <div className="contact-block">
           <h2 className="contact-large">
-            Let&apos;s make <em>something</em> loud.
+            For foundations, productions, and official inquiries, enter through
+            the <em>front gate.</em>
           </h2>
           <ul className="contact-list">
             <li>

@@ -2,11 +2,11 @@ import { skills } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section className="section reveal">
+    <section className="section reveal" id="discipline">
       <div className="container">
-        <p className="section-eyebrow">Skills</p>
+        <p className="section-eyebrow">Discipline</p>
         <h2 className="section-heading">
-          What he <em>brings</em> to a set.
+          Weapons of the <em>craft.</em>
         </h2>
         <div className="skills-grid">
           {skills.map((group) => (
