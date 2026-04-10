@@ -15,9 +15,19 @@ export default function Home() {
       <Filmography />
       <Contact />
       <footer className="footer">
-        <div className="container" style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+        <div className="container footer-inner">
           <span>Résumé demo — not an official page.</span>
-          <span>Built with Next.js · Design by UI UX Pro Max principles</span>
+          <span>
+            Photo:{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Jackie_Chan_Cannes_2013.jpg"
+              rel="noreferrer"
+            >
+              Georges Biard
+            </a>
+            , CC BY-SA 3.0
+          </span>
+          <span>Built with Next.js</span>
         </div>
       </footer>
     </main>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { bio } from "@/data/bio";
 import { films } from "@/data/films";
 
@@ -35,10 +36,23 @@ export function Hero() {
           </div>
         </div>
 
-        <h1 className="hero-name">
-          <span className="first">Jackie</span>
-          <span className="last">Chan</span>
-        </h1>
+        <div className="hero-split">
+          <h1 className="hero-name">
+            <span className="first">Jackie</span>
+            <span className="last">Chan</span>
+          </h1>
+          <figure className="hero-portrait">
+            <Image
+              src="/jackie-chan.jpg"
+              alt="Portrait of Jackie Chan at the Cannes Film Festival, 2013"
+              width={677}
+              height={960}
+              priority
+              sizes="(max-width: 900px) 60vw, 320px"
+            />
+            <figcaption>Cannes, 2013</figcaption>
+          </figure>
+        </div>
 
         <div className="hero-meta">
           <p className="hero-roles">
