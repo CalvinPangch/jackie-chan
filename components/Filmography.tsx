@@ -14,27 +14,59 @@ export function Filmography() {
     byDecade.set(d, arr);
   }
   const decades = [...byDecade.keys()].sort((a, b) => b - a);
+  const firstYear = Math.min(...films.map((f) => f.year));
+  const directedCount = films.filter((f) => f.role?.toLowerCase().includes("director")).length;
 
   return (
-    <section className="section">
-      <h2>
-        Filmography <span className="muted">({films.length} feature films)</span>
-      </h2>
-      {decades.map((d) => {
-        const entries = (byDecade.get(d) ?? []).slice().sort((a, b) => b.year - a.year);
-        return (
-          <div key={d} className="decade">
-            <h3>
-              {d}s <span className="muted">({entries.length})</span>
-            </h3>
-            <ul className="film-list">
-              {entries.map((film, i) => (
-                <FilmRow key={`${film.year}-${film.title}-${i}`} film={film} />
-              ))}
-            </ul>
+    <section className="section reveal">
+      <div className="container">
+        <p className="section-eyebrow">Filmography</p>
+        <h2 className="section-heading">
+          {films.length}+ films. <em>Six decades.</em> Still rolling.
+        </h2>
+
+        <div className="film-stats">
+          <div className="film-stat">
+            <span className="film-stat-num">{films.length}</span>
+            <span className="film-stat-label">Feature films</span>
           </div>
-        );
-      })}
+          <div className="film-stat">
+            <span className="film-stat-num">{decades.length}</span>
+            <span className="film-stat-label">Decades active</span>
+          </div>
+          <div className="film-stat">
+            <span className="film-stat-num">{firstYear}</span>
+            <span className="film-stat-label">Screen debut</span>
+          </div>
+          <div className="film-stat">
+            <span className="film-stat-num">{directedCount}+</span>
+            <span className="film-stat-label">As director</span>
+          </div>
+        </div>
+
+        {decades.map((d) => {
+          const entries = (byDecade.get(d) ?? [])
+            .slice()
+            .sort((a, b) => b.year - a.year);
+          return (
+            <div key={d} className="decade">
+              <div className="decade-head">
+                <div className="decade-head-sticky">
+                  <h3 className="decade-label">
+                    {d}
+                    <em>{entries.length} films</em>
+                  </h3>
+                </div>
+                <ul className="film-list">
+                  {entries.map((film, i) => (
+                    <FilmRow key={`${film.year}-${film.title}-${i}`} film={film} />
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

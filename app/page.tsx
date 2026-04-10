@@ -14,9 +14,11 @@ export default function Home() {
       <Awards />
       <Filmography />
       <Contact />
-      <footer className="footer muted small">
-        Résumé site — built with Next.js. Filmography compiled from public
-        sources; dates and titles reflect widely recognized English releases.
+      <footer className="footer">
+        <div className="container" style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+          <span>Résumé demo — not an official page.</span>
+          <span>Built with Next.js · Design by UI UX Pro Max principles</span>
+        </div>
       </footer>
     </main>
   );

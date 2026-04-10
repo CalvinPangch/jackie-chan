@@ -1,24 +1,70 @@
 import { bio } from "@/data/bio";
+import { films } from "@/data/films";
+
+const MARQUEE_TITLES = [
+  "Drunken Master",
+  "Police Story",
+  "Project A",
+  "Armour of God",
+  "Rumble in the Bronx",
+  "Rush Hour",
+  "Who Am I?",
+  "The Legend of Drunken Master",
+  "Shanghai Noon",
+  "The Karate Kid",
+  "Kung Fu Panda",
+  "The Foreigner",
+  "Ride On",
+];
 
 export function Hero() {
+  const firstYear = Math.min(...films.map((f) => f.year));
+  const years = new Date().getFullYear() - firstYear;
+
   return (
-    <header className="hero">
-      <div className="hero-mark" aria-hidden="true">
-        JC
+    <section className="hero">
+      <div className="container">
+        <div className="hero-top">
+          <div>
+            <div>Résumé</div>
+            <div>{bio.stageName}</div>
+          </div>
+          <div>
+            <div>Est. {firstYear}</div>
+            <div>{years}+ years on screen</div>
+          </div>
+        </div>
+
+        <h1 className="hero-name">
+          <span className="first">Jackie</span>
+          <span className="last">Chan</span>
+        </h1>
+
+        <div className="hero-meta">
+          <p className="hero-roles">
+            <strong>Actor.</strong> <strong>Martial artist.</strong>{" "}
+            <strong>Stunt performer.</strong> <strong>Director.</strong>{" "}
+            <strong>Producer.</strong> A six-decade career of breaking bones,
+            breaking records, and redefining what an action movie can look
+            like.
+          </p>
+          <div className="hero-facts">
+            <div>{bio.legalName}</div>
+            <div>Born {bio.born.split(",")[0]}</div>
+            <div>{bio.based}</div>
+          </div>
+        </div>
       </div>
-      <div>
-        <h1>{bio.stageName}</h1>
-        <p className="hero-sub">
-          Actor · Martial Artist · Stunt Performer · Director · Producer
-        </p>
-        <p className="hero-meta">
-          <span>{bio.legalName}</span>
-          <span>·</span>
-          <span>Born {bio.born}</span>
-          <span>·</span>
-          <span>{bio.based}</span>
-        </p>
+
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {[...MARQUEE_TITLES, ...MARQUEE_TITLES].map((title, i) => (
+            <span key={i} className={i % 3 === 0 ? "mark" : undefined}>
+              {title} <span>✦</span>
+            </span>
+          ))}
+        </div>
       </div>
-    </header>
+    </section>
   );
 }
