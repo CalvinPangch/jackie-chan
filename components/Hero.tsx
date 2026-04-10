@@ -2,6 +2,8 @@ import Image from "next/image";
 import { bio } from "@/data/bio";
 import { films } from "@/data/films";
 
+import jackieImage from "@/public/jackie-chan.jpg";
+
 const MARQUEE_TITLES = [
   "Drunken Master",
   "Police Story",
@@ -43,10 +45,8 @@ export function Hero() {
           </h1>
           <figure className="hero-portrait">
             <Image
-              src="/jackie-chan.jpg"
+              src={jackieImage}
               alt="Portrait of Jackie Chan at the Cannes Film Festival, 2013"
-              width={677}
-              height={960}
               priority
               sizes="(max-width: 900px) 60vw, 320px"
             />
